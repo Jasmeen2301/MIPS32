@@ -1,0 +1,48 @@
+[*]
+[*] GTKWave Analyzer v3.3.48 (w)1999-2013 BSI
+[*] Tue Apr 21 14:01:46 2026
+[*]
+[dumpfile] "C:\Users\DELL\Desktop\MIPS32\mips2.vcd"
+[dumpfile_mtime] "Tue Apr 21 13:51:26 2026"
+[dumpfile_size] 4695
+[savefile] "C:\Users\DELL\Desktop\MIPS32\output2.gtkw"
+[timestart] 0
+[size] 1536 801
+[pos] -1 -1
+*-5.783642 10 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] mips_tb2.
+[sst_width] 211
+[signals_width] 182
+[sst_expanded] 1
+[sst_vpaned_height] 225
+@28
+mips_tb2.mips.clk1
+mips_tb2.mips.clk2
+@22
+mips_tb2.mips.PC[31:0]
+mips_tb2.mips.IF_ID_NPC[31:0]
+mips_tb2.mips.IF_ID_IR[31:0]
+mips_tb2.mips.ID_EX_IR[31:0]
+@24
+mips_tb2.mips.ID_EX_A[31:0]
+mips_tb2.mips.ID_EX_B[31:0]
+@22
+mips_tb2.mips.ID_EX_IMM[31:0]
+@24
+mips_tb2.mips.ID_EX_TYPE[2:0]
+@22
+mips_tb2.mips.EX_MEM_IR[31:0]
+mips_tb2.mips.EX_MEM_ALUOUT[31:0]
+mips_tb2.mips.EX_MEM_B[31:0]
+@28
+mips_tb2.mips.EX_MEM_COND
+@22
+mips_tb2.mips.MEM_WB_IR[31:0]
+@23
+mips_tb2.mips.MEM_WB_ALUOUT[31:0]
+@24
+mips_tb2.mips.MEM_WB_LMD[31:0]
+@28
+mips_tb2.mips.MEM_WB_TYPE[2:0]
+[pattern_trace] 1
+[pattern_trace] 0

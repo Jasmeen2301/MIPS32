@@ -1,0 +1,30 @@
+[*]
+[*] GTKWave Analyzer v3.3.48 (w)1999-2013 BSI
+[*] Thu Apr 23 19:06:53 2026
+[*]
+[dumpfile] "C:\Users\DELL\Desktop\MIPS32\mips3.vcd"
+[dumpfile_mtime] "Thu Apr 23 18:54:34 2026"
+[dumpfile_size] 14610
+[savefile] "C:\Users\DELL\Desktop\MIPS32\output.gtkw"
+[timestart] 0
+[size] 1536 801
+[pos] -1 -1
+*-10.061701 217 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] mips_tb3.
+[sst_width] 211
+[signals_width] 227
+[sst_expanded] 1
+[sst_vpaned_height] 225
+@28
+mips_tb3.mips.clk1
+mips_tb3.mips.clk2
+@24
+mips_tb3.mips.ID_EX_A[31:0]
+mips_tb3.mips.ID_EX_B[31:0]
+@25
+mips_tb3.mips.ID_EX_IMM[31:0]
+@28
+mips_tb3.mips.TAKEN_BRANCH
+mips_tb3.mips.EX_MEM_COND
+[pattern_trace] 1
+[pattern_trace] 0
