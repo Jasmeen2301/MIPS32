@@ -2,9 +2,13 @@ module mips32(clk1,clk2);
   input clk1,clk2;
   reg [31:0] PC,IF_ID_NPC,IF_ID_IR;
   reg [31:0] ID_EX_NPC,ID_EX_IR,ID_EX_A,ID_EX_B,ID_EX_IMM;
+
   reg [2:0] ID_EX_TYPE,EX_MEM_TYPE,MEM_WB_TYPE;
+  parameter RR_ALU=3'b000, RM_ALU=3'b001, LOAD=3'b010, STORE=3'b011, BRANCH=3'b100, HALT=3'b101;
+
   reg [31:0] EX_MEM_IR,EX_MEM_ALUOUT,EX_MEM_B;
   reg EX_MEM_COND;
+  
   reg [31:0] MEM_WB_LMD,MEM_WB_ALUOUT,MEM_WB_IR;
   
   reg [31:0] REG[31:0];
@@ -12,7 +16,6 @@ module mips32(clk1,clk2);
   
   parameter ADD=6'b000000, SUB=6'b000001, AND=6'b000010, OR=6'b000011,  SLT=6'b000100, MUL=6'b000101, HLT=6'b111111, LW=6'b001000, SW=6'b001001,ADDI=6'b001010, SUBI=6'b001011, SLTI=6'b001100, BNEQZ=6'b001101,BEQZ=6'b001110;
   
-  parameter RR_ALU=3'b000, RM_ALU=3'b001, LOAD=3'b010, STORE=3'b011, BRANCH=3'b100, HALT=3'b101;
   reg HALTED;
   reg TAKEN_BRANCH;
   
@@ -37,6 +40,8 @@ module mips32(clk1,clk2);
     end
     end
   
+
+
   //ID
   always @(posedge clk2)
     begin
@@ -65,7 +70,9 @@ module mips32(clk1,clk2);
       end
         
     end
-  
+
+
+
   //EX
   always @( posedge clk1)
     begin
@@ -111,10 +118,9 @@ module mips32(clk1,clk2);
       end
     end
   
-        
-  
+
+
   //MEM
-  
   always @(posedge clk2)
     if (HALTED == 0)
     begin
@@ -131,9 +137,8 @@ module mips32(clk1,clk2);
     end
    
   
-  
+   
   //WB
-  
   always @(posedge clk1)
     begin
       if(TAKEN_BRANCH == 0)
@@ -149,6 +154,4 @@ module mips32(clk1,clk2);
     end
   
 endmodule
-
-
 

@@ -21,24 +21,18 @@ module mips_tb2;
         mips.REG[k] = k;
       end
 
-      mips.MEM[0] = 32'h28010078;   // ADDI R1, R0, 120
-
+      // Load a word stored in memory location 120, add 45 to it, and store the result in memory location 121.
+      mips.MEM[0] = 32'h28010078;   // ADDI R1, R0, 120  -> R1 = 120
       mips.MEM[1] = 32'h0c631800;   // dummy
-
-      mips.MEM[2] = 32'h20220000;   // LW R2, 0(R1)
-
+      mips.MEM[2] = 32'h20220000;   // LW R2, 0(R1)  ->  R2 = MEM[120] = 85
       mips.MEM[3] = 32'h0c631800;   // dummy
-
-      mips.MEM[4] = 32'h2842002d;   // ADDI R2, R2, 45
-
+      mips.MEM[4] = 32'h2842002d;   // ADDI R2, R2, 45   -> R2 = 85 + 45 = 130
       mips.MEM[5] = 32'h0c631800;   // dummy
+      mips.MEM[6] = 32'h24220001;   // SW R2, 1(R1)   ->  MEM[121] = 130 
+      mips.MEM[7] = 32'hfc000000;   // HLT  
 
-      mips.MEM[6] = 32'h24220001;   // SW R2, 1(R1)
-
-      mips.MEM[7] = 32'hfc000000;  // HLT  
 
       mips.MEM[120] = 85;
-
       mips.HALTED = 0;
       mips.TAKEN_BRANCH = 0;
       mips.PC = 0;
@@ -55,14 +49,6 @@ module mips_tb2;
     end
 
 
-
 endmodule
 
-// 0: ADDI R1, R0, 120      → R1 = 120
-// 1: OR   R3, R3, R3       → dummy
-// 2: LW   R2, 0(R1)        → R2 = MEM[120] = 85
-// 3: OR   R3, R3, R3       → dummy
-// 4: ADDI R2, R2, 45       → R2 = 85 + 45 = 130
-// 5: OR   R3, R3, R3       → dummy
-// 6: SW   R2, 1(R1)        → MEM[121] = 130  
-// 7: HLT
+
