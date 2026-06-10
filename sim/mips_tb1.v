@@ -1,4 +1,4 @@
-`include "mips.v"
+`include "Srcs/mips.v"
 
 module mips_tb1;
 
@@ -43,7 +43,7 @@ module mips_tb1;
 
 
     initial begin
-      $dumpfile("mips1.vcd");
+      $dumpfile("outputs/mips1.vcd");
       $dumpvars(0, mips_tb1);
       #300 $finish;
     end
